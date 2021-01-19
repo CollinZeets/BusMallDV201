@@ -1,0 +1,25 @@
+body {
+  margin: 0 auto;
+  width: 1000px;
+  background-color: rgb(140, 150, 160);
+}
+
+main {
+  background-color: rgb(8, 99, 38);
+}
+header {
+  margin-bottom: 100px;
+}
+nav {
+  height: 200px;
+  padding: 20px;
+  background-color: rgb(63, 63, 100);
+  text-align: center;
+}
+ul li {
+  display: inline;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: turquoise;
+}
