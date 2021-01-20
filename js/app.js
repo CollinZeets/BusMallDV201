@@ -2,7 +2,7 @@
 let imageElements = document.getElementsByTagName("img");
 let indexes = [-1, -1, -1];
 let roundCount = 0;
-const rounds = 5;
+const rounds = 25;
 class Product {
   constructor(name, path) {
     this.name = name;
@@ -90,19 +90,17 @@ function displayResults() {
     newListItem.textContent = `${products[i].name} was clicked on ${products[i].clickCount} times, and was shown ${products[i].shownCount} times.`;
     resultList.appendChild(newListItem);
     let percentageListItem = document.createElement("li");
+    let math = `ZERO clicks and shown ${products[i].shownCount} times.`;
     if (products[i].displayCount === 0) {
-      let math = `ZERO clicks and shown ${products[i].shownCount} times.`;
     } else {
       math =
         Math.round(
-          (
-            products[i]["clickCount"] /
-            products[i]["shownCount"]
-          ).toFixed(2) * 100
+          (products[i]["clickCount"] / products[i]["shownCount"]).toFixed(2) *
+            100
         ) + "%";
     }
     percentageListItem.textContent =
-      `${productContainer[i].name} percentage of clicks was` + math;
+      `${products[i].name} percentage of clicks was ` + math;
     resultList.appendChild(percentageListItem);
   }
 }
