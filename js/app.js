@@ -99,7 +99,14 @@ function makeUL(array) {
 
     // Set its contents:
     item.appendChild(
-      document.createTextNode(array[i].name + ' ' +array[i].clickCount + ' times clicked ' + array[i].shownCount + ' times seen')
+      document.createTextNode(
+        array[i].name +
+          " " +
+          array[i].clickCount +
+          " times clicked " +
+          array[i].shownCount +
+          " times seen"
+      )
     );
 
     // Add it to the list:
@@ -109,3 +116,21 @@ function makeUL(array) {
   // Finally, return the constructed list:
   return list;
 }
+var ctx = document.getElementById("chart").getContext("2d");
+var chart = new Chart(ctx, {
+  // The type of chart we want to create
+  type: "bar",
+
+  // The data for our dataset
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "My First dataset",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: [0, 10, 5, 2, 20, 30, 45],
+      },
+    ],
+  },
+});
